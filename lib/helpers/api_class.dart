@@ -36,4 +36,26 @@ class Api {
       );
     }
   }
+
+  Future<Map<String, dynamic>> Put({
+    required String uri,
+    required Map<String, dynamic> body,
+    String? token,
+  }) async {
+    Map<String, String> headers = {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    };
+    if (token != null) {
+      headers.addAll({"Authorization": "Bearer $token"});
+    }
+    http.Response response = await http.post(Uri.parse(uri), body: body);
+    if (response.statusCode == 200) {
+      Map<String, dynamic> data = jsonDecode(response.body);
+      return data;
+    } else {
+      throw Exception(
+        'Failed to create product. Status code: ${response.statusCode} , with body ${jsonDecode(response.body)}',
+      );
+    }
+  }
 }
