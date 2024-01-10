@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/models/product_model.dart';
 
-class CustomProductCard extends StatelessWidget {
+class CustomProductCard extends StatefulWidget {
   CustomProductCard({super.key, required this.product});
   ProductModel product;
+
+  @override
+  State<CustomProductCard> createState() => _CustomProductCardState();
+}
+
+class _CustomProductCardState extends State<CustomProductCard> {
+  Color? _color = Colors.grey;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +22,7 @@ class CustomProductCard extends StatelessWidget {
           GestureDetector(
             onTap: () {
               Navigator.pushNamed(context, 'UpdateProductPage',
-                  arguments: product);
+                  arguments: widget.product);
             },
             child: SizedBox(
               child: Card(
@@ -48,18 +55,25 @@ class CustomProductCard extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(right: 20),
                               child: Text(
-                                product.title,
+                                widget.product.title,
                                 overflow: TextOverflow.fade,
                                 maxLines: 1,
                               ),
                             ),
                             Row(
                               children: [
-                                Text(r'$' + product.price.toString()),
+                                Text(r'$' + widget.product.price.toString()),
                                 const Spacer(),
-                                const Icon(
-                                  Icons.favorite,
-                                  color: Colors.red,
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _color = Colors.red;
+                                    });
+                                  },
+                                  child: Icon(
+                                    Icons.favorite,
+                                    color: _color,
+                                  ),
                                 ),
                               ],
                             )
@@ -74,7 +88,7 @@ class CustomProductCard extends StatelessWidget {
             left: 53,
             top: -48,
             child: Image.network(
-              product.image,
+              widget.product.image,
               width: 90,
               height: 90,
               fit: BoxFit.contain,

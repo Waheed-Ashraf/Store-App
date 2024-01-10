@@ -44,16 +44,20 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
               child: Column(
                 children: [
                   CircleAvatar(
-                    radius: 102,
+                    radius: 82,
                     backgroundColor: const Color.fromARGB(255, 215, 176, 255),
                     child: CircleAvatar(
-                      radius: 100,
+                      backgroundColor: Colors.white,
+                      radius: 80,
                       child: Image.network(
                         product.image,
                         width: 100,
                         height: 100,
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   CustomTextFieldtow(
                     hintText: 'Enter Product Name',
@@ -101,7 +105,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
                       try {
                         // ignore: use_build_context_synchronously
                         showSnackBar(context,
-                            color: const Color.fromARGB(255, 215, 176, 255),
+                            color: Colors.green,
                             message: 'Your product updated successflly');
 
                         setState(() {
@@ -111,6 +115,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
                         setState(() {
                           isLooding = false;
                         });
+                        // ignore: use_build_context_synchronously
                         showSnackBar(
                           context,
                           color: Colors.red,

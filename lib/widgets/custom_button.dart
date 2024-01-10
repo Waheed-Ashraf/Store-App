@@ -21,7 +21,7 @@ class CustomBotton extends StatelessWidget {
           style: const TextStyle(
             // fontFamily: 'SeymourOne',
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),
