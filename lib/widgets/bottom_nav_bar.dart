@@ -31,7 +31,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       extendBody: true,
       bottomNavigationBar: CurvedNavigationBar(
         index: _selectedIndex,
-        color: const Color.fromARGB(255, 215, 176, 255),
+        color: Color.fromARGB(255, 208, 164, 251),
         backgroundColor: Colors.transparent,
         items: [
           CustomIconProvider.getHomePageIcon(),

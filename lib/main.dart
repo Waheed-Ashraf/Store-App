@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/services/get_all_product_service.dart';
 import 'package:store_app/views/home_page.dart';
+import 'package:store_app/views/splash_screen.dart';
 import 'package:store_app/views/update_product_page.dart';
 import 'package:store_app/widgets/bottom_nav_bar.dart';
 
@@ -24,7 +25,7 @@ class StoreApp extends StatelessWidget {
         'HomePage': (context) => const HomePage(),
         'UpdateProductPage': (context) => UpdateProductPage(),
       },
-      home: BottomNavBar(),
+      home: SplashScreen(),
     );
   }
 }
