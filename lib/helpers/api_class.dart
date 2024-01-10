@@ -37,20 +37,24 @@ class Api {
     }
   }
 
+  //put Methode ==========================>>>>>>>>>>>>>>
+
   Future<Map<String, dynamic>> Put({
     required String uri,
     required Map<String, dynamic> body,
     String? token,
   }) async {
+    print('$uri' 'the body : $body');
     Map<String, String> headers = {
       'Content-Type': 'application/x-www-form-urlencoded',
     };
     if (token != null) {
       headers.addAll({"Authorization": "Bearer $token"});
     }
-    http.Response response = await http.post(Uri.parse(uri), body: body);
+    http.Response response = await http.put(Uri.parse(uri), body: body);
     if (response.statusCode == 200) {
       Map<String, dynamic> data = jsonDecode(response.body);
+      print(data);
       return data;
     } else {
       throw Exception(

@@ -8,13 +8,14 @@ class CustomProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 40, left: 10, right: 10),
+      padding: const EdgeInsets.only(top: 50, left: 10, right: 10),
       child: Stack(
         clipBehavior: Clip.none,
         children: [
           GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, 'UpdateProductPage');
+              Navigator.pushNamed(context, 'UpdateProductPage',
+                  arguments: product);
             },
             child: SizedBox(
               child: Card(

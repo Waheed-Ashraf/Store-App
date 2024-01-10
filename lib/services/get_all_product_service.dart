@@ -13,7 +13,6 @@ class GetAllProductsService {
     for (var element in data) {
       productList.add(ProductModel.fromJson(element));
     }
-    print(productList);
     return productList;
   }
 }
