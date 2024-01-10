@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/widgets/category_pages.dart';
 
 class MensClothesPage extends StatelessWidget {
   const MensClothesPage({super.key});
@@ -6,9 +7,11 @@ class MensClothesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('mens'),
+      appBar: AppBar(
+        title: const Text("Men's Clothing"),
+        centerTitle: true,
       ),
+      body: CategoryPages(categoryName: "men's clothing"),
     );
   }
 }

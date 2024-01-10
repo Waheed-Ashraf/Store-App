@@ -1,7 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:store_app/helpers/icon_provider.dart';
 import 'package:store_app/views/electronics_page.dart';
 import 'package:store_app/views/home_page.dart';
@@ -18,7 +17,7 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   // ignore: non_constant_identifier_names
-  List Screens = const [
+  List Screens = [
     HomePage(),
     MensClothesPage(),
     ElectronicsPage(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/widgets/category_pages.dart';
 
 class JewlaryPage extends StatelessWidget {
   const JewlaryPage({super.key});
@@ -6,9 +7,11 @@ class JewlaryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('jewlary'),
+      appBar: AppBar(
+        title: const Text('Jewelery'),
+        centerTitle: true,
       ),
+      body: CategoryPages(categoryName: 'jewelery'),
     );
   }
 }
